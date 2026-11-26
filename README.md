@@ -18,3 +18,7 @@ git subtree push --prefix dist origin gh-pages
 ```
 
 The domain is managed at Squarespace. Its DNS must point to GitHub Pages. Social profiles marked as forthcoming are intentionally not links.
+
+## Search visibility
+
+Every HTML page includes `<meta name="robots" content="noindex">` to request exclusion from search results. Preserve this tag on new pages. Do not block crawling in robots.txt: search engines need to fetch each page to read the tag. The site remains public to anyone with its URL.
