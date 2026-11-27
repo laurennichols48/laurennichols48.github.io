@@ -14,3 +14,9 @@
 .ml-row{display:grid;grid-template-columns:150px minmax(0,1fr) 64px;gap:12px;align-items:center;min-height:42px;font:14px/1.4 system-ui,sans-serif}.ml-track{position:relative;height:24px;background:linear-gradient(to right,transparent calc(50% - .5px),#8b777f calc(50% - .5px),#8b777f calc(50% + .5px),transparent calc(50% + .5px))}.ml-bar{position:absolute;height:14px;top:5px;background:#91455f;border-radius:2px}.ml-bar.negative{background:#28676b}.ml-value{text-align:right;font-variant-numeric:tabular-nums}.ml-axis{margin:8px 76px 0 162px;display:flex;justify-content:space-between;font:12px system-ui,sans-serif}
 .data-table{overflow:auto;margin:16px 0}.data-table table{border-collapse:collapse;width:100%;font:14px/1.5 system-ui,sans-serif}.data-table caption{text-align:left;margin-bottom:8px}.data-table th,.data-table td{padding:8px;text-align:right;border-bottom:1px solid #e5cdd6;white-space:nowrap}.data-table th:first-child,.data-table td:first-child{text-align:left}
 @media(max-width:600px){.explorer{padding-top:24px}.ml-row{grid-template-columns:104px minmax(0,1fr) 52px;gap:8px;font-size:12px}.ml-axis{margin-left:112px;margin-right:60px}.explorer-controls{display:block}.explorer select{width:100%}.explorer p{font-size:15px}.chart-legend{gap:16px}}
+#survey-dots{display:grid;grid-template-columns:repeat(16,12px);gap:8px;margin:20px 0}
+#survey-dots span{width:12px;height:12px;border:1px solid #91455f;border-radius:50%;box-sizing:border-box}
+#survey-dots .passes{background:#91455f}
+#survey-chart svg{width:100%;height:auto;display:block}
+#survey-country-title{font:400 22px/1.4 Georgia,serif;margin:28px 0 8px}
+@media(max-width:600px){#survey-dots{grid-template-columns:repeat(16,10px);gap:7px}#survey-dots span{width:10px;height:10px}#survey-explorer .explorer-controls label+label{margin-top:16px}}

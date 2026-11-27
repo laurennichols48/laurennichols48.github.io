@@ -26,3 +26,5 @@ Every HTML page includes `<meta name="robots" content="noindex">` to request exc
 ## Interactive project charts
 
 `dist/assets/project-data.js` contains public aggregate results: ML subgroup Brier-score differences transcribed from Table 23 (p. 39) of the synthetic-populations report, and all 14 periods from the growth project’s `results/growth_table_5yr.csv`. `dist/explorers.js` renders the attribute selector, growth measure selector, period slider, and accessible data tables. `dist/explorers.css` supplies responsive chart styles. Charts do not request raw records or run model inference.
+
+The 14.390 explorer uses `assets/survey-data.js`, copied from the corrected WVS aggregate CSV. Country labels follow the WVS Wave 7 v6.0 codebook (pp. 2–3). `survey-explorer.js` displays the pointwise intervals and selected adjusted p-values; intervals are deliberately not changed by the multiple-testing selector. Counts at 5%: unadjusted 26, Bonferroni 13, Holm 13, BH 20.
