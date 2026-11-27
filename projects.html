@@ -1,15 +1,36 @@
 <!doctype html>
-<html lang="en"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Lauren Nichols | An MIT researcher interested in using data to inform public policy."><meta name="theme-color" content="#fff8fa"><title>Selected projects | Lauren Nichols</title><link rel="icon" href="assets/monogram.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=rose1"></head>
+<html lang="en"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Lauren Nichols | An MIT researcher interested in using data to inform public policy."><meta name="theme-color" content="#fff8fa"><title>Selected projects | Lauren Nichols</title><link rel="icon" href="assets/monogram.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=rose1"><link rel="stylesheet" href="explorers.css?v=1"><script src="assets/project-data.js?v=1" defer></script><script src="explorers.js?v=1" defer></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="page-header"><a class="home" href="index.html">Lauren Nichols</a><nav aria-label="Main navigation"><a href="index.html">About</a><a href="cv.html">CV</a><a href="projects.html" aria-current="page">Selected projects</a></nav></header><main id="main">  <section id="projects" class="page-content projects-page" aria-labelledby="projects-title">
     <h1 id="projects-title">Selected projects</h1>
     <article class="project">
       <div><h3><a href="https://github.com/laurennichols48/synthetic-population-evaluation">Evaluating synthetic LLM populations</a></h3><p>We compared balanced and population-weighted fine-tuning to study how well language models represent demographic groups and predict behavior. I worked on model training and evaluation.</p><p class="project-credit">Collaborative research · MIT 6.8610</p></div>
       <a class="side-link" href="https://github.com/laurennichols48/synthetic-population-evaluation/blob/main/reports/synthetic-populations-report.pdf">Read the paper</a>
-    </article>
+
+    <section class="explorer" aria-labelledby="ml-explorer-title" id="ml-explorer">
+      <h4 id="ml-explorer-title">Who benefits from each training approach?</h4>
+      <p>Balanced training gives demographic classes more equal representation. Population-weighted training follows the population distribution. Explore how the tradeoff changes across groups.</p>
+      <div class="explorer-controls" hidden><label for="ml-target">Demographic attribute<select id="ml-target"></select></label></div>
+      <div id="ml-chart"></div>
+      <p class="chart-note">Difference in Brier score: population-weighted minus balanced. Lower Brier scores mean better probability predictions. Positive differences favor balanced training; negative differences favor population-weighted training.</p>
+      <p id="ml-reading" class="chart-reading" aria-live="polite"></p>
+      <details><summary>Data and interpretation</summary><p>Values are transcribed from Table 23 (page 39) of our report, rounded to three decimals. These are subgroup differences, not absolute scores or causal effects. No uncertainty intervals are reported in this table. A gain for one group does not establish that a model is unbiased overall.</p><div id="ml-table" class="data-table"></div><p><a href="https://github.com/laurennichols48/synthetic-population-evaluation/blob/main/reports/synthetic-populations-report.pdf">Read the source report</a></p></details>
+      <noscript><p>Enable JavaScript to explore the results, or read Table 23 in the linked report.</p></noscript>
+    </section>    </article>
     <article class="project">
       <div><h3><a href="https://github.com/laurennichols48/taiwan-philippines-growth">Growth accounting: Taiwan and the Philippines</a></h3><p>A comparison of capital, labor, and residual productivity using Penn World Table data. Includes my paper, Python analysis, and exported results.</p><p class="project-credit">MIT 14.05</p></div>
       <a class="side-link" href="https://github.com/laurennichols48/taiwan-philippines-growth">View project</a>
-    </article>
+
+    <section class="explorer" aria-labelledby="growth-explorer-title" id="growth-explorer">
+      <h4 id="growth-explorer-title">Two economies, changing sources of growth</h4>
+      <p>Compare output growth and the contributions of capital, labor, and residual productivity. Choose a measure, then move through the five-year periods.</p>
+      <div class="explorer-controls" hidden><label for="growth-metric">Measure<select id="growth-metric"><option value="0">Output growth</option><option value="1">Capital contribution</option><option value="2">Labor contribution</option><option value="3">Residual productivity</option></select></label></div>
+      <p id="growth-unit" class="chart-note"></p><div class="chart-legend"><span><i class="taiwan-key"></i>Taiwan</span><span><i class="philippines-key"></i>Philippines</span></div>
+      <div id="growth-chart"></div>
+      <div class="timeline" hidden><label for="growth-period">Selected period: <output id="growth-period-label" for="growth-period"></output></label><input type="range" id="growth-period" min="0" max="13" step="1" value="0"><div class="timeline-ends"><span>1950–1954</span><span>2015–2019</span></div></div>
+      <p id="growth-reading" class="chart-reading" aria-live="polite"></p>
+      <details><summary>Data and interpretation</summary><p>Five-year averages from my growth-accounting notebook using Penn World Table data. Growth rates are annual log differences multiplied by 100, an approximation to percentage growth. Values are rounded to one decimal, so contributions may not add exactly to output growth. Country coverage can differ, and boundary periods may contain fewer than five observations. Residual productivity includes factors the model does not explain; it is not a pure measure of technology. Human capital is outside this decomposition.</p><div id="growth-table" class="data-table"></div><p><a href="https://github.com/laurennichols48/taiwan-philippines-growth/blob/main/results/growth_table_5yr.csv">View the source data</a> · <a href="https://github.com/laurennichols48/taiwan-philippines-growth/blob/main/VALIDATION.md">Analysis notes</a></p></details>
+      <noscript><p>Enable JavaScript to explore the chart, or open the linked source data.</p></noscript>
+    </section>    </article>
     <article class="project">
       <div><h3><a href="https://github.com/laurennichols48/survey-inference">Survey inference and multiple testing</a></h3><p>GSS and World Values Survey exercises examining education, social beliefs, and perceptions of election fairness. Original coursework and later review notes are labeled separately.</p><p class="project-credit">MIT 14.390</p></div>
       <a class="side-link" href="https://github.com/laurennichols48/survey-inference">View project</a>
